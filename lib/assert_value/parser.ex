@@ -1,4 +1,6 @@
 defmodule AssertValue.Parser do
+  @moduledoc false
+
   # This is internal parser error
   # In theory we parse any valid Elixir code and should not face it
   defmodule ParseError do

@@ -1,4 +1,6 @@
 defmodule AssertValue.Diff do
+  @moduledoc false
+
   @prefixes %{eq: " ", ins: "+", del: "-"}
 
   def diff(a, b) when is_binary(a) and is_binary(b) do

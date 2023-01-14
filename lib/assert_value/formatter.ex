@@ -1,4 +1,6 @@
 defmodule AssertValue.Formatter do
+  @moduledoc false
+
   import AssertValue.StringTools
 
   def new_expected_from_actual_value(actual) do

@@ -1,4 +1,6 @@
 defmodule AssertValue.StringTools do
+  @moduledoc false
+
   def to_lines(arg) do
     arg
     # remove trailing newline otherwise String.split will give us an

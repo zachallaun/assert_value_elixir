@@ -1,4 +1,6 @@
 defmodule AssertValue.Server do
+  @moduledoc false
+
   use GenServer, restart: :temporary
   import AssertValue.StringTools
 
