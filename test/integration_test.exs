@@ -112,23 +112,23 @@ build_test_module :DiffTest, "diff_test.exs",
 
 build_test_module :DiffAndHelpPromtTest, "diff_and_help_prompt_test.exs",
   env: [{'ASSERT_VALUE_ACCEPT_DIFFS', 'ask'}],
-  expected_exit_code: 1 # There should be failed tests
+  expected_exit_code: 2
 
 build_test_module :MiscTest, "misc_test.exs",
   env: [{'ASSERT_VALUE_ACCEPT_DIFFS', 'ask'}],
-  expected_exit_code: 1
+  expected_exit_code: 2
 
 build_test_module :AcceptAppTest, "accept_all_test.exs",
   env: [{'ASSERT_VALUE_ACCEPT_DIFFS', 'ask'}],
-  expected_exit_code: 0 # No failed tests
+  expected_exit_code: 0
 
 build_test_module :AcceptAllWithErrorsTest, "accept_all_with_error_test.exs",
   env: [{'ASSERT_VALUE_ACCEPT_DIFFS', 'ask'}],
-  expected_exit_code: 1
+  expected_exit_code: 2
 
 build_test_module :DeclineAllTest, "decline_all_test.exs",
   env: [{'ASSERT_VALUE_ACCEPT_DIFFS', 'ask'}],
-  expected_exit_code: 1
+  expected_exit_code: 2
 
 build_test_module :NonInteractiveAcceptTest, "non_interactive_accept_test.exs",
   env: [{'ASSERT_VALUE_ACCEPT_DIFFS', 'y'}],
@@ -136,7 +136,7 @@ build_test_module :NonInteractiveAcceptTest, "non_interactive_accept_test.exs",
 
 build_test_module :NonInteractiveRejectTest, "non_interactive_reject_test.exs",
   env: [{'ASSERT_VALUE_ACCEPT_DIFFS', 'n'}],
-  expected_exit_code: 1
+  expected_exit_code: 2
 
 build_test_module :ReformatExpectedTest, "reformat_expected_test.exs",
   env: [{'ASSERT_VALUE_ACCEPT_DIFFS', 'reformat'}],

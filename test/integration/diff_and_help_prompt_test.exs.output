@@ -37,7 +37,7 @@ Accept new value? [y,n,?]
   1) test promt help then diff then fail (DiffAndHelpPromptTest)
      diff_and_help_prompt_test.exs:##
      AssertValue assertion failed
-     code:  "foo"
+     code:  "\"foo\""
      left: "foo"
      right: nil
      stacktrace:

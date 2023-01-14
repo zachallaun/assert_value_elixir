@@ -85,14 +85,7 @@ defmodule AssertValue.IntegrationTest.Support do
       |> Enum.map_join("\n", fn([_, x]) -> x end)
       |> Kernel.<>("\n")
 
-    # Elixir 1.13 changed default failed testcase exit status to 2
-    # and introduced --exit-status param
-    exec_params =
-      if Version.match?(System.version, ">= 1.13.0") do
-        ["test", "--seed", "0", "--exit-status", "1", filename]
-      else
-        ["test", "--seed", "0", filename]
-      end
+    exec_params = ["test", "--seed", "0", filename]
 
     {output, exit_code} =
       AssertValue.IntegrationTest.Support.exec(

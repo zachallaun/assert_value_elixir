@@ -59,7 +59,7 @@ Accept new value? [y,n,?]
   1) test simple fail (MiscTest)
      misc_test.exs:##
      AssertValue assertion failed
-     code: actual == "aaa\nbBb\nccc\n"
+     code:  "actual == \"aaa\\nbBb\\nccc\\n\""
      left: "aaa\nbbb\nccc\n"
      right: "aaa\nbBb\nccc\n"
      stacktrace:
@@ -76,7 +76,7 @@ Accept new value? [y,n,?]
   2) test escaped string (MiscTest)
      misc_test.exs:##
      AssertValue assertion failed
-     code: actual == "\"bar\""
+     code:  "actual == \"\\\"bar\\\"\""
      left: "\"foo\""
      right: "\"bar\""
      stacktrace:

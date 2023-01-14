@@ -834,14 +834,18 @@ parser_test.exs:##:"test left/right expressions" assert_value failed
 Accept new value? [y,n,?] 
 parser_test.exs:##:"test left/right expressions" assert_value failed
 
--    assert_value foo <> "bar"
-+    assert_value foo <> "bar" == "foobar"
+     assert_value foo <>
+-                   "bar"
++                   "bar" == "foobar"
 
 Accept new value? [y,n,?] 
 parser_test.exs:##:"test left/right expressions" assert_value failed
 
--    assert_value foo <> "bar" == bar <> "baz"
-+    assert_value foo <> "bar" == "foobar"
+     assert_value foo <>
+                    "bar" ==
+-                   bar <>
+-                     "baz"
++                   "foobar"
 
 Accept new value? [y,n,?] .
 parser_test.exs:##:"test functions" assert_value failed
@@ -876,18 +880,18 @@ parser_test.exs:##:"test functions" assert_value failed
 Accept new value? [y,n,?] .
 parser_test.exs:##:"test pipes" assert_value failed
 
--    assert_value String.upcase("foo") |> String.reverse() ==
+     assert_value String.upcase("foo") |> String.reverse() ==
 -                   String.upcase("bar") |> String.reverse()
-+    assert_value String.upcase("foo") |> String.reverse() == "OOF"
++                   "OOF"
 
 Accept new value? [y,n,?] 
 parser_test.exs:##:"test pipes" assert_value failed
 
      assert_value String.upcase("foo")
--                 |> String.reverse() ==
+                  |> String.reverse() ==
 -                   String.upcase("bar")
 -                   |> String.reverse()
-+                 |> String.reverse() == "OOF"
++                   "OOF"
 
 Accept new value? [y,n,?] .
 parser_test.exs:##:"test repeatable expressions" assert_value failed
@@ -918,11 +922,9 @@ parser_test.exs:##:"test AST cleanup" assert_value failed
                     "when Kernel.in(x, [false, nil])"
 -                 )
 +                 ) == """
-+                 case(1) do
-+                   x when Kernel.in(x, [false, nil]) ->
-+                     false
-+                   x ->
-+                     x
++                 case 1 do
++                   x when Kernel.in(x, [false, nil]) -> false
++                   x -> x
 +                 end<NOEOL>
 +                 """
 

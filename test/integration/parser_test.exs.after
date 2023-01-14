@@ -516,10 +516,13 @@ defmodule ParserTest do
     assert_value foo <> "bar" == "foobar"
 
     # prompt: y
-    assert_value foo <> "bar" == "foobar"
+    assert_value foo <>
+                   "bar" == "foobar"
 
     # prompt: y
-    assert_value foo <> "bar" == "foobar"
+    assert_value foo <>
+                   "bar" ==
+                   "foobar"
   end
 
   test "functions" do
@@ -545,11 +548,13 @@ defmodule ParserTest do
 
   test "pipes" do
     # prompt: y
-    assert_value String.upcase("foo") |> String.reverse() == "OOF"
+    assert_value String.upcase("foo") |> String.reverse() ==
+                   "OOF"
 
     # prompt: y
     assert_value String.upcase("foo")
-                 |> String.reverse() == "OOF"
+                 |> String.reverse() ==
+                   "OOF"
   end
 
   test "repeatable expressions" do
@@ -577,11 +582,9 @@ defmodule ParserTest do
                    "when x in [false, nil]",
                    "when Kernel.in(x, [false, nil])"
                  ) == """
-                 case(1) do
-                   x when Kernel.in(x, [false, nil]) ->
-                     false
-                   x ->
-                     x
+                 case 1 do
+                   x when Kernel.in(x, [false, nil]) -> false
+                   x -> x
                  end<NOEOL>
                  """
   end

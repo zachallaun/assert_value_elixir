@@ -40,7 +40,7 @@ This makes sense for longer values. `assert_value` will create and update file c
 
 ## Requirements
 
-Elixir ~> 1.7
+Elixir ~> 1.13
 
 ## Installation
 
